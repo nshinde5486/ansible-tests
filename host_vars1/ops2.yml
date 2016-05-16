@@ -1,0 +1,8 @@
+---
+ops_ports:
+  - name: 1
+    ipv4_address: 172.16.10.1/24
+  - name: 2
+    ipv4_address: 172.16.11.1/24
+  - name: 3
+    ipv4_address: 172.16.21.1/24

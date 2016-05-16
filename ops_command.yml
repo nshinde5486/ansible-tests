@@ -1,0 +1,24 @@
+---
+- hosts: ops
+  gather_facts: no
+  
+  vars:
+    cli:
+      host: 172.17.0.4
+      port: 22
+      username: netop
+      password: netop
+
+  tasks:
+    - name: Run show commands
+      ops_command:
+        commands:
+          - show version
+          - show vlan
+          - show vrf
+        provider: "{{ cli }}"
+      register: output
+      connection: local
+
+    - name: debug registered output
+      debug: var=output
