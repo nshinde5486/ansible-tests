@@ -1,11 +1,11 @@
 ---
 - hosts: ops
   roles:
-     - ops-switch-role
+     - ops1
 
   vars:
     cli:
-      host: 172.17.0.2
+      host: 192.168.1.3
       port: 22
       username: netop
       password: netop
@@ -18,6 +18,7 @@
           - show vlan
           - show vrf
           - show run
+          - show ntp associations
         provider: "{{ cli }}"
       register: output
       connection: local
